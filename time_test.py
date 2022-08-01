@@ -1,9 +1,9 @@
 from tracemalloc import start
-import Skeleton
-import main
+import OOP_Solution
+import Functional_Solution
 import time
 
-def time_it(function):
+def time_it(functions):
     times = []
     for x in range(100):
         start_time = time.time_ns()
@@ -12,9 +12,8 @@ def time_it(function):
         total = end_time - start_time
         times.append(total/1000000000)
 
-    print(f"Function: {str(function)} Min: {min(times)}, Max: {max(times)}, Average: {sum(times)/len(times):.2f},'\
-        ' Total: {sum(times)}")
+    print(f'Function: {function.__name__} Min: {min(times)}, Max: {max(times)}, Average: {sum(times)/len(times):.2f},'\
+        f' Total: {sum(times)}')
 
 if __name__ == '__main__':
-    time_it(Skeleton.main)
-    time_it(main.main)
+    time_it([OOP_Solution.main, Functional_Solution.main])
