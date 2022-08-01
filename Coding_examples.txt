@@ -1,0 +1,90 @@
+## DATATYPES
+num_1 = 10 
+num_2 = 20.0
+str_1 = 'Mako'
+str_2 = 'Another company'
+bool_1 = True
+bool_2 = False
+
+print(type(num_1))
+print(type(num_2))
+print(type(str_1))
+print(type(bool_1))
+print(type(bool_2))
+
+print('\n')
+
+## OPERATORS
+print('10 - 10 = '   + str(num_1 - num_1)) # Addition
+print('10 + 20.0 = ' + str(num_1 + num_2)) # Subtraction
+print('10 > 20.0 = ' + str(num_1 > num_2)) # Greater than
+print('10 < 20.0 = ' + str(num_1 < num_2)) # Less than
+print('10 >= 20.0 = ' + str(num_1 >= num_2)) # Greater/equal than
+print('10 <= 20.0 = ' + str(num_1 <= num_2)) # Less/equal than
+print('Mako == Another company = ' + str(str_1 == str_2)) # Equal to 
+print('Mako != Another company = ' + str(str_1 != str_2)) # Not equal to 
+
+print('\n')
+
+## LISTS
+countries = ['England', 'Scotland', 'Germany', 'France']
+print(countries[0])
+print('I am from ' + countries[2] + '.')
+
+print('\n')
+
+for country in countries:
+  print(country)
+  
+print('\n')
+
+## DICTIONARY
+euro_results = {
+  'England': '1st',
+  'Germany': '2nd',
+  'France': '3rd',
+  'Sweden': '4th'
+}
+
+# Retrieve value
+print(euro_results['Germany'])
+
+# Assign value
+euro_results['Italy'] = '8th'
+print(euro_results)
+
+# Loop over dictionary
+for country, position in euro_results.items():
+  print(country + ' came '+ position + '.')
+
+print('\n')
+
+
+## FUNCTIONS
+
+def add(val_1, val_2):
+  return val_1 + val_2
+  
+print(add(1,2))
+
+
+## CLASSES
+
+class Car(object):
+  
+  def __init__(self, brand, colour, num_doors=4):
+    self.brand = brand
+    self.colour = colour
+    self.num_doors = num_doors
+    self.speed = 0
+    
+  def accelerate(self):
+    self.speed = self.speed + 5
+    print('Current speed is: ' + str(self.speed) + 'km/h.')
+    
+  def brake(self):
+    print('Current speed after brake is: ' + str(self.speed) + 'km/h.')
+
+my_car = Car('Toyota', 'red')
+my_car.accelerate()
+my_car.brake()
