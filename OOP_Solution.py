@@ -21,8 +21,9 @@ class Instrument:
         self.minPrice = price if price < self.minPrice or self.minPrice == 0 else self.minPrice
 
     def printSummary(self):
-        print(f'Symbol: {self.name}, Max Price: {self.maxPrice:4}, Min Price: {self.minPrice:4}, '\
-            f'Average Price: {self.totalPrice/self.tradeCount:7.2f}, Total Volume: {self.totalVolume:5}')
+        with open("oop_output.txt", "a") as output:
+            output.write(f'Symbol: {self.name}, Max Price: {self.maxPrice:4}, Min Price: {self.minPrice:4}, '\
+            f'Average Price: {self.totalPrice/self.tradeCount:7.2f}, Total Volume: {self.totalVolume:5}\n')
         # Example - print('Symbol: {} Max Price: {} Min Price: {} Average Price: {} Total Volume: {}'.format(self.name, self.maxPrice, self.minPrice, averagePrice, self.totalVolume))
 
 
@@ -51,6 +52,8 @@ def printSummary(symbols):
 
 # Main code
 def main():
+    with open("oop_output.txt", "w") as output:
+        output.write("Timings\n")
     # A dictionary to store our instrument information
     symbols = dict()
     inputFile = 'https://storage.googleapis.com/temp-bucket-5862/input_data.csv'
